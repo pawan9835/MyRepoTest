@@ -1,7 +1,7 @@
 <html>
 <body>
  
-
+<h1>Suraj Gar</h1>
 <h1 style="color: red;">Admin Register !</h1><hr>
   <h4>
   
@@ -30,7 +30,7 @@
     
   </h4>
 
-</pre>
+
 
 
 
@@ -52,31 +52,7 @@ Admin Code
 <h4><pre>
 
 
-	@RequestMapping("/admin")
-	public String adminRegistration(@ModelAttribute("admin")Admin admin,@ModelAttribute("address")Address addr) {
 
-		/*Address addr = new Address();
-		Admin admin = new Admin();
-
-		addr.setAdd_city("Patna");
-		addr.setAdd_id(222222);
-		addr.setState("Bihar");
-		addr.setPincode("8248");
-
-		admin.setAdmin_ID(1221);
-		admin.setAdmin_name("Pawan");
-		admin.setAdmin_address(addr);
-		
-*/
-		System.out.println(admin);
-		int id = adminService.registerAdmin(admin);
-
-		sendMail.sendMail("pawan.pk921@gmail.com", "Register Success fully ", "Hi Pawan How are ? ", null);
-
-		System.out.println("Register Successs " + id);
-		return "success";
-	}
-</pre>
 </h4>
  
 
