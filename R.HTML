@@ -1,0 +1,85 @@
+<html>
+<body>
+ 
+
+<pre>
+<h1 style="color: red;">Admin Register !</h1><hr>
+  <h4>
+  
+    <form tag="Create Logon"  action="test" method="post">
+		<div align="center">
+		    
+			Admin ID     *: <input type="text" name="admin_ID" /><br />
+			Full Name     *: <input type="text" name="admin_name" /><br />
+			Add_Id      *: <input type="surname" name="add_id" /><br />
+			
+                        Address : <select name="loc.locId">
+      
+                         <option value="-1">--select--</option>
+                         <c:forEach items="${locListObj}" var="loc">
+                         <option value="${loc.locId}"><c:out value="${loc.locName}"/></option>
+                        </c:forEach>
+                         </select>
+			State *: <input type="date of birth" name="state" /><br />
+			Pincode        *: <input type="text" name="pincode" /><br />
+			
+ 
+		<input type="submit" value="Submit" />
+		</div>
+	</form>
+ 
+    
+  </h4>
+
+</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Admin Code
+<hr>
+<h4><pre>
+
+
+	@RequestMapping("/admin")
+	public String adminRegistration(@ModelAttribute("admin")Admin admin,@ModelAttribute("address")Address addr) {
+
+		/*Address addr = new Address();
+		Admin admin = new Admin();
+
+		addr.setAdd_city("Patna");
+		addr.setAdd_id(222222);
+		addr.setState("Bihar");
+		addr.setPincode("8248");
+
+		admin.setAdmin_ID(1221);
+		admin.setAdmin_name("Pawan");
+		admin.setAdmin_address(addr);
+		
+*/
+		System.out.println(admin);
+		int id = adminService.registerAdmin(admin);
+
+		sendMail.sendMail("pawan.pk921@gmail.com", "Register Success fully ", "Hi Pawan How are ? ", null);
+
+		System.out.println("Register Successs " + id);
+		return "success";
+	}
+</pre>
+</h4>
+ 
+
+</body>
+</html>
